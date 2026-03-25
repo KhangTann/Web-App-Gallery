@@ -1,10 +1,10 @@
-### INFO
+## INFO
 + Name: Nguyen Tan Khang
 + Student Code: 23722301
 
 
 
-#### PART 1
+### PART 1
 
 Tiến hành Build
 - Project FastAPI hoàn chỉnh
@@ -21,3 +21,18 @@ Chưa làm auth, chưa làm API → chỉ setup nền
 + Port: 
     - http://127.0.0.1:8000/ 
     - http://127.0.0.1:8000/docs#/
+
+### PART 2
+
+Thư Viện:
++ pip install python-jose passlib[bcrypt]
++ pip install "pydantic[email]" 
+Hoặc
++ pip install email-validator
+
+##### TEST:
+{
++   "username": "khang",
++   "email": "kkk@gmail.com",
++   "password": "kkk123"
+}

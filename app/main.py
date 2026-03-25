@@ -1,14 +1,16 @@
 from fastapi import FastAPI
 from app.db.database import engine, Base
-from app.db import models
+from app.api import auth
 
-# Tạo bảng trong database
+# Tạo bảng
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+# Include router
+app.include_router(auth.router)
 
-# Test endpoint
+
 @app.get("/")
 def read_root():
     return {"message": "Gallery App Backend is running!"}
