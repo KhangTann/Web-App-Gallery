@@ -60,11 +60,11 @@ def get_photo(
 
 
 # D. Update photo
+from app.schemas.photo import PhotoUpdate
 @router.put("/{photo_id}")
 def update_photo(
     photo_id: int,
-    title: str = Form(...),
-    description: str = Form(...),
+    photo_data: PhotoUpdate,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -73,8 +73,8 @@ def update_photo(
     if not photo or photo.user_id != current_user.id:
         raise HTTPException(status_code=404, detail="Photo not found")
 
-    photo.title = title
-    photo.description = description
+    photo.title = photo_data.title
+    photo.description = photo_data.description
 
     db.commit()
 

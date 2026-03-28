@@ -12,3 +12,10 @@ class PhotoResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+
+
+class PhotoUpdate(BaseModel):
+    title: str
+    description: str

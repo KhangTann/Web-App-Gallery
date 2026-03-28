@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -16,20 +17,50 @@ function Register() {
         password,
       });
 
-      alert("Register success");
+      alert("Đăng ký thành công!");
       navigate("/");
     } catch (err) {
-      alert("Register failed");
+      alert("Đăng ký thất bại!");
     }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-      <input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
-      <input placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={handleRegister}>Register</button>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>Đăng ký</h2>
+
+        <input
+          className="auth-input"
+          placeholder="Tên đăng nhập"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <input
+          className="auth-input"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
+          className="auth-input"
+          type="password"
+          placeholder="Mật khẩu"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button className="auth-btn" onClick={handleRegister}>
+          Tạo tài khoản
+        </button>
+
+        <p className="auth-switch">Đã có tài khoản?</p>
+
+        <button
+          className="auth-btn secondary"
+          onClick={() => navigate("/")}
+        >
+          Quay lại đăng nhập
+        </button>
+      </div>
     </div>
   );
 }

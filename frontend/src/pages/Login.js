@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -17,16 +18,41 @@ function Login() {
       localStorage.setItem("token", res.data.access_token);
       navigate("/gallery");
     } catch (err) {
-      alert("Login failed");
+      alert("Sai tài khoản hoặc mật khẩu!");
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-      <input placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={handleLogin}>Login</button>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>Đăng nhập</h2>
+
+        <input
+          className="auth-input"
+          placeholder="Tên đăng nhập"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <input
+          className="auth-input"
+          type="password"
+          placeholder="Mật khẩu"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button className="auth-btn" onClick={handleLogin}>
+          Vào Thư Viện
+        </button>
+
+        <p className="auth-switch">Chưa có tài khoản?</p>
+
+        <button
+          className="auth-btn secondary"
+          onClick={() => navigate("/register")}
+        >
+          Đăng ký
+        </button>
+      </div>
     </div>
   );
 }
