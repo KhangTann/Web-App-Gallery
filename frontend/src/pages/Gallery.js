@@ -12,8 +12,9 @@ function Gallery() {
 
   const navigate = useNavigate();
 
+  // /photos --> /photos/
   const fetchPhotos = async () => {
-    const res = await axios.get("/photos");
+    const res = await axios.get("/photos/");
     setPhotos(res.data);
   };
 

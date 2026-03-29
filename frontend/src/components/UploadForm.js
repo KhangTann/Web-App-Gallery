@@ -12,7 +12,7 @@ function UploadForm({ refresh }) {
     formData.append("title", title);
     formData.append("description", description);
 
-    await axios.post("/photos", formData);
+    await axios.post("/photos/", formData);
     refresh();
   };
 

@@ -92,14 +92,14 @@ _____________________________________________________
 14. Gọi: DELETE /photos/1 (Database: record biến mất; Folder: file ảnh bị xóa)
 
 
-### PART 5:
+### PART 4:
 
 Cài đặt:
 - Đường dẫn: D:\HomeCode\App_Development\Web_App_Gallery\frontend>
 + npx create-react-app . (tạo folder frontend nhưng chưa có src)
 + (HOẶC) Nếu chưa có frontend, npx create-react-app gallery-frontend
 
-Tiếp tục chạy:
+cài đặt chạy thư viện:
 + npm install axios react-router-dom
 
 ###### Chạy chương trình
