@@ -19,7 +19,7 @@ function UploadForm({ refresh }) {
   return (
     <div>
       <h3>Upload Photo</h3>
-      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+      <input key={file ? file.name : "file-input"} type="file" onChange={(e) => setFile(e.target.files[0])} />
       <input placeholder="title" onChange={(e) => setTitle(e.target.value)} />
       <input placeholder="description" onChange={(e) => setDescription(e.target.value)} />
       <button onClick={handleUpload}>Upload</button>

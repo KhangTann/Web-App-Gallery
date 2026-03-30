@@ -55,7 +55,8 @@ function Gallery() {
   return (
     <div className="gallery-container">
       <div className="gallery-header">
-        <h2>Thư viện ảnh</h2>
+        {/*FU3 thêm class title */}
+        <h2 class="title">Thư viện ảnh</h2>
         <button onClick={handleLogout}>Đăng xuất</button>
       </div>
 
